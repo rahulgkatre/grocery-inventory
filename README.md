@@ -1,1 +1,5 @@
-# home-inventory
+# Grocery Inventory System
+
+I designed this system to keep track of the food we have at home, so that we know what we need to buy and what we don't. Once a barcode is read, it looks up the product name on a UPC item database. Only light web scraping is used since the database I am using writes the product name in the title. This also means I have hard coded any "N/A" product names so that bad data is avoided. Names are added to a Google Sheets that you provide a Google API key to (JSON) so that you can access your lists while at the grocery store. An internal database is also kept (part of the spreadsheet) so that you can add custom names to products and repeated lookups are faster. The inventory system also has add and remove functionality, so item quantity is also tracked. 
+
+The only hardware requirements are a USB barcode scanner that has HID drivers, allowing it to act like a keyboard when plugged in and scanning barcodes. This is because my program relies on Python's `raw_input` function to read barcodes, rather than decoding HID inputs. The code also works on a Raspberry Pi if it is connected to your WiFi, and my future goals with this project is to combine a Pi Zero and a USB barcode scanner into an all-in-one device. 
