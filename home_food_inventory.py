@@ -11,7 +11,7 @@ def spreadsheet():
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     
     # https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html
-    creds = ServiceAccountCredentials.from_json_keyfile_name('Home Inventory List-685f95cf0b5d.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('grocery-inventory-308220-92f4a7d235af.json', scope)
     client = gspread.authorize(creds)
 
     spreadsheet = client.open("Home Inventory List")
